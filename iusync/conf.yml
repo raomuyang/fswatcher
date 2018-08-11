@@ -1,0 +1,12 @@
+store_type: qiniu # qiniu / oss
+log_level: 5 # DEBUG(5) INFO(4) WARN(3) ERROR(2) FATAL(1) PANIC(0)
+log_path: /path/to/save/log # specify the log path
+scan_at_start: true # default false
+include_hidden: true # default false
+opt_delay: 3 # default 3 (seconds)
+access:
+  access_key_id: your_access_key_id
+  access_key_secret: your_access_key_secret
+  bucket: your_bucket_name
+  domain: http://eg.xxx.cn # The bound custom domain name(to assemble a visible url)
+  endpoint: xxx  # if the store type is qiniu, this section is optional

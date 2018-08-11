@@ -1,0 +1,19 @@
+lagunage: go
+go:
+  - 1.9.x
+  - 1.10.x
+  - tip
+
+install:
+    - echo "initial:" `pwd`
+    - make prepare
+script:
+    - make test
+
+#deploy:
+#    provider: releases
+#    api_key: $GITHUB_TOKEN
+#    skip-cleanup: true
+#    file: $SOURCE/target/*
+#    on:
+#      tags: true
