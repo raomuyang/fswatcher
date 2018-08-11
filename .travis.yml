@@ -1,19 +1,30 @@
-lagunage: go
+language: go
 go:
   - 1.9.x
   - 1.10.x
   - tip
 
 install:
-    - echo "initial:" `pwd`
+    - pwd
+    - export SOURCE=`pwd`
     - make prepare
+
 script:
     - make test
 
-#deploy:
-#    provider: releases
-#    api_key: $GITHUB_TOKEN
-#    skip-cleanup: true
-#    file: $SOURCE/target/*
-#    on:
-#      tags: true
+before_deploy:
+    - make compile
+
+deploy:
+    provider: releases
+    api_key: $GITHUB_TOKEN
+    skip-cleanup: true
+    file: $SOURCE/target/*
+    on:
+      tags: true
+
+matrix:
+  allow_failures:
+    # qiniupkg
+    - go: 1.10.x
+    - go: tip
