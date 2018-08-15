@@ -11,7 +11,7 @@ install:
 
 cache:
     directories:
-     - $GOPATH
+     - $GOPATH/src/qiniupkg.com
 
 script:
     - make test
