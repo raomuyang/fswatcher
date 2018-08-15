@@ -21,7 +21,7 @@ before_deploy:
 
 deploy:
     provider: releases
-    api_key: $GITHUB_TOKEN
+    api_key: "$GITHUB_TOKEN"
     skip-cleanup: true
     file: $SOURCE/target/*
     on:
@@ -30,5 +30,4 @@ deploy:
 matrix:
   allow_failures:
     # qiniupkg
-    - go: 1.10.x
     - go: tip

@@ -101,7 +101,7 @@ func main() {
 
 	go func() {
 		sig := <-sigs
-		log.Info("Got signal: %v", sig)
+		log.Infof("Got signal: %v", sig)
 		exit <- true
 	}()
 
@@ -295,7 +295,7 @@ func upload(fsSync filesync.FileSync, filePath string, root string) {
 func deleteKey(fsSync filesync.FileSync, filePath string, root string) {
 	key := getKey(filePath, root)
 	err := fsSync.Delete(key)
-	log.Info("Delete key: %s, err: %v", key, err)
+	log.Infof("Delete key: %s, err: %v", key, err)
 }
 
 func getKey(filePath, root string) string {
@@ -334,7 +334,7 @@ func scanFolder(root string) {
 
 	files, err := ioutil.ReadDir(root)
 	if err != nil {
-		log.Warn("read directory error: %s", err.Error())
+		log.Warnf("read directory error: %s", err.Error())
 		return
 	}
 
