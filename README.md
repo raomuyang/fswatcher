@@ -11,13 +11,10 @@ A library to listen to the changes of File/Folder：
 * [x] RENAME
 * [x] DELETE
 
-## Install
+## Installation
 
 ```shell
-go get github.com/raomuyang/fswatcher
-
-# install iusync to path
-go install github.com/raomuyang/fswatcher/iusync
+go get github.com/raomuyang/fswatcher/iusync
 ```
 
 ## Watcher
@@ -60,10 +57,9 @@ image to the map bed and get the image link.
 
 ### Usage
 
-* install iusync by golang (You can also download the compiled version.)
+* install iusync by golang (You can also download the compiled executable binary file from release.)
 ```shell
-go get github.com/raomuyang/fswatcher
-go install github.com/raomuyang/fswatcher/iusync
+go get github.com/raomuyang/fswatcher/iusync
 ```
 
 * write config
