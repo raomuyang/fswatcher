@@ -17,7 +17,7 @@ test: prepare
 
 .PHONY: compile
 compile: prepare
-	@echo "Prepare environment"
+	@echo "Compile all"
 	mkdir -p target
 	GOOS=windows GOARCH=amd64 go build  -o target/iusync-win.exe iusync/iusync.go
 	GOOS=linux GOARCH=amd64 go build  -o target/iusync-linux iusync/iusync.go
