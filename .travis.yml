@@ -9,6 +9,10 @@ install:
     - export SOURCE=`pwd`
     - make prepare
 
+cache:
+    directories:
+     - $GOPATH
+
 script:
     - make test
 
