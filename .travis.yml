@@ -18,12 +18,14 @@ script:
 
 before_deploy:
     - make compile
-
+    - ls $SOURCE/target/
 deploy:
     provider: releases
     api_key: "$GITHUB_TOKEN"
-    skip-cleanup: true
+    skip_cleanup: true
+    file_glob: true
     file: $SOURCE/target/*
+    overwrite: true
     on:
       tags: true
 
@@ -31,3 +33,4 @@ matrix:
   allow_failures:
     # qiniupkg
     - go: tip
+
